@@ -153,6 +153,20 @@ Visualizations
 
 ---
 
+## Dashboard Preview
+
+![Dashboard Page 1](Page1.png)
+
+---
+
+![Dashboard Page 2](Page2.png)
+
+---
+
+![Dashboard Page 3](Page3.png)
+
+---
+
 ## Dataset Information
 
 | Attribute | Value |
