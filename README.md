@@ -1,155 +1,220 @@
-# Supply Chain Analytics Dashboard
+# Customer Retention and Loyalty Analytics Dashboard
 
 ## Overview
 
-The Supply Chain Analytics Dashboard is an end-to-end Business Intelligence project developed to analyze supply chain operations, product performance, customer behavior, shipping efficiency, and geographical sales distribution. The project demonstrates the complete data analytics workflow, from data cleaning and normalization to SQL querying and interactive dashboard development.
+The **Customer Retention and Loyalty Analytics Project** is an end-to-end Business Intelligence solution developed using the **Instacart Market Basket Analysis** dataset. The project focuses on understanding customer purchasing behavior, measuring customer loyalty, identifying reorder patterns, and analyzing product and category performance through interactive Power BI dashboards.
 
-The project was built using Python for data preprocessing, MySQL for data storage and querying, and Power BI for visualization and business reporting.
+The project demonstrates the complete data analytics workflow—from data cleaning and transformation to SQL-based analysis and dashboard development—providing actionable insights that can support customer retention strategies and business decision-making.
+
+---
+
+## Problem Statement
+
+Understanding customer behavior is essential for improving retention and increasing repeat purchases. Businesses need to identify loyal customers, analyze reorder behavior, evaluate product performance, and understand shopping patterns to optimize marketing strategies and inventory planning.
+
+This project addresses these challenges by building a comprehensive analytics dashboard that transforms transactional data into meaningful business insights.
 
 ---
 
 ## Objectives
 
-- Analyze overall sales and profitability.
-- Monitor product and customer performance.
-- Evaluate shipping efficiency and delivery performance.
-- Identify high-performing markets, countries, and regions.
-- Build an interactive dashboard for business decision-making.
+- Analyze customer purchasing behavior and shopping patterns.
+- Measure customer loyalty and retention.
+- Identify reorder trends across customers and departments.
+- Discover top-performing products, aisles, and departments.
+- Monitor business KPIs through interactive dashboards.
+- Generate actionable insights for improving customer engagement and retention.
 
 ---
 
-## Tech Stack
+## Dataset
 
-- Python
+**Dataset:** Instacart Market Basket Analysis
+
+The dataset contains millions of grocery transactions and includes information about:
+
+- Orders
+- Customers
+- Products
+- Departments
+- Aisles
+- Reordered Products
+
+### Files Used
+
+- orders.csv
+- order_products_prior.csv
+- products.csv
+- aisles.csv
+- departments.csv
+
+---
+
+## Tools and Technologies
+
+### Python
 - Pandas
+  - Data cleaning and preprocessing
+  - Data merging and transformation
+  - Feature engineering
+  - Aggregations and customer-level metric creation
+
 - NumPy
-- MySQL
-- Power BI
-- DAX
+  - Numerical computations
+  - Statistical calculations
+
+- Matplotlib
+  - Exploratory data analysis (EDA)
+  - Data visualization
+  - Distribution plots
+  - Trend analysis
+
+---
+
+### SQL
+- Data extraction and querying
+- Joins across multiple tables
+- Aggregate functions
+- GROUP BY and HAVING
+- Common Table Expressions (CTEs)
+- Window Functions
+- Ranking and analytical queries
+- Customer segmentation analysis
+- Reorder rate calculations
+- KPI generation
+
+---
+
+### Power BI
+- Interactive dashboard development
+- Data modeling and relationships
+- DAX Measures and Calculated Columns
+- KPI Cards
+- Slicers and Filters
+- Drill-down analysis
+- Custom visualizations
+- Business Intelligence reporting
 
 ---
 
 ## Project Workflow
 
-### 1. Data Cleaning and Preparation (Python)
+### 1. Data Collection
 
-- Cleaned and validated the raw dataset.
-- Removed inconsistencies and unnecessary columns.
-- Converted mixed date formats into standard datetime format.
-- Handled duplicate and missing records.
-- Performed Exploratory Data Analysis (EDA).
+Imported multiple Instacart datasets containing customer orders, products, departments, and aisle information.
 
----
+### 2. Data Cleaning and Transformation
 
-### 2. Database Normalization
+Performed data preprocessing using Python by:
 
-The original dataset was normalized into multiple relational tables following a star schema approach.
+- Handling missing values
+- Merging multiple datasets
+- Removing inconsistencies
+- Creating a master transaction dataset
+- Preparing data for SQL analysis and Power BI
 
-Tables created:
+### 3. SQL Analysis
 
-- Customers
-- Products
-- Categories
-- Departments
-- Shipping
-- Locations
-- Orders
-- Date
+Used SQL to perform:
 
----
+- Customer-level analysis
+- Product analysis
+- Department analysis
+- Reorder analysis
+- Aggregations
+- Ranking
+- Window function-based analysis
 
-### 3. SQL Implementation
+### 4. Dashboard Development
 
-- Imported normalized tables into MySQL.
-- Created primary keys and foreign keys.
-- Performed business analysis using SQL queries.
-- Validated KPIs before dashboard creation.
+Built an interactive multi-page Power BI dashboard with KPIs, slicers, charts, and drill-through capabilities for business analysis.
 
 ---
 
-### 4. Dashboard Development (Power BI)
+# Dashboard Overview
 
-Created a four-page interactive dashboard with synchronized slicers.
+The dashboard consists of three interactive report pages.
 
 ---
 
-## Dashboard Pages
+## Page 1 – Executive Overview
 
-### Page 1 — Executive Overview
+Provides a high-level overview of customer orders, shopping patterns, and business performance.
 
-KPIs
+### KPIs
 
-- Total Sales
-- Total Profit
 - Total Orders
 - Total Customers
-- Average Order Value
+- Products Sold
+- Reorder Rate
+- Average Basket Size
 
-Visualizations
+### Visualizations
 
-- Monthly Sales Trend
-- Sales by Category
-- Sales by Department
-- Order Status Distribution
+- Orders by Days of Week
+- Order Activity by Hour
+- Average Basket Size by Department
+- Top 10 Departments by Products Sold
+- Purchase Type (First-Time vs Reordered)
+- Top 10 Aisles by Products Sold
 
----
+### Slicers
 
-### Page 2 — Product & Customer Analytics
-
-KPIs
-
-- Total Products Sold
-- Active Customers
-- Units Sold
-- Average Product Price
-- Profit Margin
-
-Visualizations
-
-- Top 10 Products by Sales
-- Top 10 Products by Profit
-- Customer Segmentation Analysis
-- Profit Contribution by Department (Waterfall Chart)
+- Department
+- Day of Week
 
 ---
 
-### Page 3 — Shipping & Operations Analytics
+## Page 2 – Customer Purchase Behavior & Retention Analytics
 
-KPIs
+Focuses on customer loyalty, purchase frequency, and reorder behavior.
 
-- Average Shipping Days
-- Average Scheduled Days
-- Late Delivery Rate
-- Total Shipments
-- On-Time Delivery Rate
+### KPIs
 
-Visualizations
+- Average Orders per Customer
+- Average Days Between Orders
+- Loyal Customer Rate
+- Average Reorders per Customer
+- Reordered Products %
 
-- Shipments by Shipping Mode
-- Delivery Status Distribution
-- Late Delivery Risk
-- Actual vs Scheduled Shipping Days
-- Delivery Status by Shipping Mode
-- Total Profit by Shipping Mode
+### Visualizations
+
+- Customer Order Frequency Distribution
+- Reorder Rate by Department
+- Customer Loyalty Segmentation
+- Days Since Prior Order Distribution
+- Top 15 Most Reordered Products
+
+### Slicers
+
+- Department
+- Loyalty Segment
 
 ---
 
-### Page 4 — Geographical & Market Analysis
+## Page 3 – Product & Category Performance Analysis
 
-KPIs
+Provides insights into product performance and category contribution.
 
-- Total Markets
-- Total Countries
-- Total Regions
-- Total States
-- Total Cities
+### KPIs
 
-Visualizations
+- Total Products
+- Total Departments
+- Total Aisles
+- Average Product Orders
+- Average Product Reorders
 
-- Global Sales Distribution (Filled Map)
-- Top 10 Countries by Sales
-- Sales by Market
-- Top 10 Regions by Profit
+### Visualizations
+
+- Top 20 Products by Orders
+- Pareto Analysis of Product Contribution
+- Top 15 Aisles by Orders
+- Department Reorder Rate
+
+### Slicers
+
+- Department
+- Aisle
 
 ---
 
@@ -167,63 +232,57 @@ Visualizations
 
 ---
 
-## Dataset Information
+# Key Business Insights
 
-| Attribute | Value |
-|----------|-------|
-| Total Records | 180,519 |
-| Total Columns | 48 |
-| Fact Table | Orders |
-| Dimension Tables | 7 |
-| Database | MySQL |
+- Approximately **59%** of all purchases are repeat purchases, indicating strong customer retention.
+- Produce and dairy products contribute the highest sales volume.
+- Customer ordering activity peaks during the daytime, particularly around late morning and afternoon.
+- Loyal customers place significantly more repeat orders than occasional shoppers.
+- Fresh fruits and fresh vegetables are the most frequently purchased aisles.
+- Products such as **Banana** and **Bag of Organic Bananas** have the highest reorder counts.
+- Certain departments consistently achieve higher reorder rates, indicating stronger customer loyalty.
 
 ---
 
-## Key Features
+# Features
 
-- Interactive multi-page dashboard
-- Star schema data model
-- SQL-based data validation
-- Advanced DAX measures
-- Dynamic filtering using slicers
-- Executive-level KPI reporting
+- Interactive Power BI dashboards
+- Dynamic slicers and filters
+- Customer loyalty segmentation
+- Reorder behavior analysis
+- Department-level performance tracking
 - Product performance analysis
-- Customer segmentation
-- Shipping and operational analysis
-- Geographical sales analysis
+- Pareto analysis
+- Business KPI reporting
+- Customer purchase trend analysis
 
 ---
 
-## Business Insights
-
-- Identified top-performing products and departments.
-- Compared customer segments based on sales and profit.
-- Evaluated shipping modes and delivery performance.
-- Monitored late delivery trends.
-- Analyzed market-wise and country-wise sales distribution.
-- Identified profitable geographical regions.
-
----
-
-## Skills Demonstrated
+# Skills Demonstrated
 
 - Data Cleaning
-- Data Normalization
-- Relational Database Design
+- Data Transformation
+- Exploratory Data Analysis (EDA)
 - SQL Querying
-- DAX
+- Window Functions
 - Data Modeling
+- DAX
+- KPI Development
+- Customer Analytics
+- Customer Segmentation
 - Business Intelligence
 - Dashboard Design
 - Data Visualization
-- Business Analytics
+- Analytical Thinking
+- Business Insights Generation
 
 ---
 
-## Future Enhancements
+# Future Enhancements
 
-- Real-time database connectivity
-- Forecasting using Power BI
+- Customer Churn Prediction using Machine Learning
+- Product Recommendation System
+- Sales Forecasting
 
 ---
 
