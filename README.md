@@ -1,5 +1,7 @@
 # Customer Retention and Loyalty Analytics Dashboard
 
+https://drive.google.com/file/d/1QL4JIKp5OEKBJVSfwss_lUS8qFSWHWh6/view?usp=drive_link
+
 ## Overview
 
 The **Customer Retention and Loyalty Analytics Project** is an end-to-end Business Intelligence solution developed using the **Instacart Market Basket Analysis** dataset. The project focuses on understanding customer purchasing behavior, measuring customer loyalty, identifying reorder patterns, and analyzing product and category performance through interactive Power BI dashboards.
